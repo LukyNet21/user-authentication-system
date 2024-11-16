@@ -1,0 +1,7 @@
+ - [ ] Register
+ - [ ] Login
+ - [ ] Logout
+ - [ ] Forgot Password
+ - [ ] Update Account
+ - [ ] Delete Account
+ - [ ] Get Account Info
