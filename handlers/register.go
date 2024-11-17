@@ -6,6 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
+	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
 
@@ -16,6 +17,7 @@ func Register(c *gin.Context) {
 		return
 	}
 
+	// Check fields
 	if user.Username == "" || user.Password == "" || user.Email == "" || user.FirstName == "" || user.LastName == "" {
 		c.JSON(400, gin.H{"message": "missing required fields"})
 		return
@@ -37,7 +39,16 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	err := utils.DB.Create(&user).Error
+	// Hash password
+	bytes, err := bcrypt.GenerateFromPassword([]byte(user.Password), 14)
+	if err != nil {
+		c.JSON(500, gin.H{"message": "internal server error"})
+		return
+	}
+	user.Password = string(bytes)
+
+	// Create user
+	err = utils.DB.Create(&user).Error
 	if err != nil {
 		if err == gorm.ErrDuplicatedKey {
 			c.JSON(400, gin.H{"message": "username or email already exists"})

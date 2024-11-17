@@ -1,4 +1,4 @@
- - [ ] Register
+ - [X] Register
  - [ ] Login
  - [ ] Logout
  - [ ] Forgot Password
