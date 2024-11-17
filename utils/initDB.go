@@ -2,6 +2,7 @@ package utils
 
 import (
 	"auth-system/models"
+	"os"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -10,7 +11,8 @@ import (
 var DB *gorm.DB
 
 func InitDB() {
-	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	dbFile := os.Getenv("DB_FILE")
+	db, err := gorm.Open(sqlite.Open(dbFile), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
