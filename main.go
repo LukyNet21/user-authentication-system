@@ -15,6 +15,9 @@ func main() {
 		panic("Error loading .env file")
 	}
 	utils.InitDB()
+	utils.InitEmail()
+	// Send a test email
+	// utils.SendTestEmail("mail@example.com")
 
 	r := gin.Default()
 

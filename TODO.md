@@ -1,5 +1,4 @@
 # TODO
-
  - [X] Register
  - [X] Login
  - [X] Auth middleware
@@ -11,3 +10,4 @@
  - [ ] 2FA
  - [ ] RBAC
  - [ ] Permissions system
+ - [ ] Permission check middleware
