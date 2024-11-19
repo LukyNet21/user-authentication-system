@@ -2,6 +2,7 @@ package main
 
 import (
 	"auth-system/handlers"
+	"auth-system/middleware"
 	"auth-system/utils"
 
 	"github.com/gin-gonic/gin"
@@ -20,5 +21,6 @@ func main() {
 	v1 := r.Group("/api/v1/")
 	v1.POST("/login", handlers.Login)
 	v1.POST("/register", handlers.Register)
+	v1.GET("/protected", middleware.AuthMiddleware, handlers.Protected)
 	r.Run(":8080")
 }
