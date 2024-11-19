@@ -7,7 +7,7 @@ import (
 	"gopkg.in/gomail.v2"
 )
 
-var D *gomail.Dialer
+var Email *gomail.Dialer
 
 func InitEmail() {
 	server := os.Getenv("EMAIL_SERVER_ADDRESS")
@@ -17,7 +17,7 @@ func InitEmail() {
 	}
 	username := os.Getenv("EMAIL_SERVER_USERNAME")
 	password := os.Getenv("EMAIL_SERVER_PASSWORD")
-	D = gomail.NewDialer(server, port, username, password)
+	Email = gomail.NewDialer(server, port, username, password)
 
 }
 
@@ -28,7 +28,7 @@ func SendTestEmail(to string) {
 	m.SetHeader("Subject", "Test email!")
 	m.SetBody("text/html", "This is a test email!")
 
-	if err := D.DialAndSend(m); err != nil {
+	if err := Email.DialAndSend(m); err != nil {
 		panic(err)
 	}
 }

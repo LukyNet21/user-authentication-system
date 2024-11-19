@@ -3,7 +3,7 @@
  - [X] Login
  - [X] Auth middleware
  - [ ] Logout
- - [ ] Forgot Password
+ - [X] Forgot Password
  - [ ] Update Account
  - [ ] Delete Account
  - [ ] Get Account Info

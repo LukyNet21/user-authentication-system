@@ -24,6 +24,8 @@ func main() {
 	v1 := r.Group("/api/v1/")
 	v1.POST("/login", handlers.Login)
 	v1.POST("/register", handlers.Register)
+	v1.POST("/reset-password", handlers.ResetPassword)
+	v1.PUT("/reset-password/:token", handlers.ResetPasswordToken)
 	v1.GET("/protected", middleware.AuthMiddleware, handlers.Protected)
 	r.Run(":8080")
 }
