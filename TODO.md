@@ -6,7 +6,7 @@
  - [X] Forgot Password
  - [ ] Update Account
  - [ ] Delete Account
- - [ ] Get Account Info
+ - [x] Get Account Info
  - [ ] 2FA
  - [ ] RBAC
  - [ ] Permissions system
