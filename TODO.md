@@ -5,7 +5,7 @@
  - [ ] Logout
  - [X] Forgot Password
  - [ ] Update Account
- - [ ] Delete Account
+ - [X] Delete Account
  - [x] Get Account Info
  - [ ] 2FA
  - [ ] RBAC

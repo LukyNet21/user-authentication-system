@@ -26,6 +26,7 @@ func main() {
 	v1.POST("/register", handlers.Register)
 	v1.POST("/reset-password", handlers.ResetPassword)
 	v1.PUT("/reset-password/:token", handlers.ResetPasswordToken)
+	v1.DELETE("/delete-account/:id", middleware.AuthMiddleware, handlers.DeleteAccount)
 	v1.GET("/accountInfo", middleware.AuthMiddleware, handlers.AccountInfo)
 	r.Run(":8080")
 }
