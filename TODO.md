@@ -4,7 +4,7 @@
  - [X] Auth middleware
  - [ ] Logout
  - [X] Forgot Password
- - [ ] Update Account
+ - [X] Update Account
  - [X] Delete Account
  - [x] Get Account Info
  - [ ] 2FA

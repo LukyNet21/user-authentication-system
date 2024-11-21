@@ -9,7 +9,7 @@ import (
 )
 
 func DeleteAccount(c *gin.Context) {
-	var user models.User = c.MustGet("user").(models.User)
+	user := c.MustGet("user").(models.User)
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		c.JSON(400, gin.H{"error": "Invalid ID"})
